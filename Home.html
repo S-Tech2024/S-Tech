@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S-Tech</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1c1c1c, #000000); 
+            color: #fff;
+        }
+
+        header {
+            background-color: #6a0dad; 
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            position: relative;
+        }
+
+        header img {
+            height: 65px;
+            position: absolute;
+            left: 15px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+            text-align: center;
+            flex: 1;
+        }
+
+        nav {
+            background-color: #6a0dad; 
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #ff69b4; 
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #720eb9; 
+        }
+
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product {
+            display: inline-block;
+            margin: 20px;
+            padding: 15px;
+            background-color: #2c003e; 
+            border-radius: 10px;
+            color: #fff;
+            box-shadow: 0px 0px 15px rgba(255, 20, 147, 0.7); 
+            transition: transform 0.3s ease;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        .product img {
+            width: 200px;
+            height: 200px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        button {
+            background-color: #d10078; 
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ff69b4; 
+        }
+
+        footer {
+            background-color: #6a0dad;
+            text-align: center;
+            padding: 10px 0;
+            color: #fff;
+        }
+
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: #2c003e;
+            margin: 15% auto; 
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+            color: #fff;
+            box-shadow: 0px 0px 15px rgba(255, 20, 147, 0.7); 
+        }
+
+        .modal-content h3 {
+            margin-top: 0;
+        }
+
+        .modal-content button {
+            background-color: #d10078; 
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            width: 120px;
+        }
+
+        .modal-content button:hover {
+            background-color: #ff69b4;
+        }
+
+        .close {
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            cursor: pointer;
+        }
+
+        .email {
+            margin: 15px 0;
+        }
+
+        @media (max-width: 1024px) {
+            header {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+                margin: 10px 0;
+            }
+
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+
+            nav ul li a {
+                padding: 10px 15px;
+                display: inline-block;
+            }
+
+            .product {
+                width: 90%;
+                margin: 20px auto;
+            }
+
+            .modal-content {
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header img {
+                height: 50px;
+            }
+
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            nav ul li a {
+                font-size: 1.2em;
+            }
+
+            .product img {
+                width: 150px;
+                height: 150px;
+            }
+
+            button {
+                padding: 8px 16px;
+            }
+
+            .modal-content button {
+                width: 100px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.2em;
+            }
+
+            nav ul li a {
+                font-size: 1em;
+            }
+
+            .product img {
+                width: 120px;
+                height: 120px;
+            }
+
+            button {
+                padding: 5px 10px;
+            }
+
+            .modal-content button {
+                width: 90px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="Photos/stech.png" alt="S-Tech Logo">
+        <h1>S-Tech</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="About.html">About</a></li>
+        </ul>
+    </nav>
+
+    <section id="logos">
+        <h2>Shop</h2>
+        <div class="product">
+            <img src="Photos/stech.png" alt="Logo 1">
+            <h3>Logo</h3>
+            <p>€?.00</p>
+            <button onclick="openModal('Logo')">Buy Now</button>
+        </div>
+        <div class="product">
+            <img src="Photos/stechbanner.png" alt="Logo 2">
+            <h3>Banner</h3>
+            <p>€?.00</p>
+            <button onclick="openModal('Banner')">Buy Now</button>
+        </div>
+    </section>
+
+    <section id="websites">
+        <div class="product">
+            <img src="Photos/stechgif.gif" alt="Website 1">
+            <h3>GIF</h3>
+            <p>€?.00</p>
+            <button onclick="openModal('GIF')">Buy Now</button>
+        </div>
+        <div class="product">
+            <img src="Photos/stechbanner.png" alt="Website 2">
+            <h3>Website</h3>
+            <p>€?.00</p>
+            <button onclick="openModal('Website')">Buy Now</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 S-Tech. All rights reserved.</p>
+    </footer>
+
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3>Payment Information for <span id="productName"></span></h3>
+            <p>The price for this item depends on the specific requirements you need. Please contact us for more information.</p>
+            <p class="email">Email for google Chat: <a href="mailto:info@s-tech.com" style="color:#ff69b4;">s.tech.webdevelopment.tech@gmail.com</a></p>
+            <p>Please choose your preferred platform for further communication:</p>
+            <button onclick="window.open('https://chat.google.com/s.tech.webdevelopment.tech@gmail.com/', '_blank')">Google Chat</button>
+            <button onclick="window.open('https://discord.gg/TjzGyZZDY9', '_blank')">Discord</button>
+        </div>
+    </div>
+
+    <script>
+        function openModal(product) {
+            document.getElementById('productName').textContent = product;
+            document.getElementById('paymentModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('paymentModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            let modal = document.getElementById('paymentModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+
+</body>
+</html>
